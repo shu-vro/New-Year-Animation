@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Covered+By+Your+Grace");
+
+.timer {
+    position: relative;
+    font-family: "Covered By Your Grace", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 3em;
+    color: #333;
+    animation: go 1s cubic-bezier(0.22, 1, 0.36, 1) 12s 1 forwards;
+
+    @keyframes go {
+        50% {
+            transform: scale(0.75);
+        }
+        100% {
+            transform: scale(0.75) translateY(-120%);
+        }
+    }
+
+    h1 {
+        margin: 0;
+        margin-bottom: 40px;
+        font-size: 4em;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .flip-countdown-title {
+        font-family: "Covered By Your Grace", cursive;
+        font-size: 35px !important;
+    }
+
+    @media screen and (max-height: 700px) {
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    @media screen and (max-width: 862px) {
+        h1 {
+            font-size: 2em;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        p {
+            font-size: 0.7em;
+        }
+        h1 {
+            margin-bottom: 0;
+            font-size: 1.5em;
+        }
+    }
+}
