@@ -1,19 +1,15 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import Stats from "three/examples/jsm/libs/stats.module.js";
 import { BendModifier } from "../plugins/BendModifier";
 import "../css/Animation.scss";
 
-export default class Animation extends Component {
-    constructor(props) {
-        super(props);
-    }
-    componentDidMount() {
+export default function Animation({ images }) {
+    // Images:
+    let { EarthTexture, SpaceTexture, NormalEarthTexture } = images;
+    useEffect(() => {
         let canvas = document.querySelector("canvas");
-        // Images:
-        let { EarthTexture, SpaceTexture, NormalEarthTexture } =
-            this.props.images;
         // CREATING A SCENE.
         let scene = new THREE.Scene();
         // CREATING A CAMERA.
@@ -237,12 +233,10 @@ export default class Animation extends Component {
             renderer.setSize(window.innerWidth, window.innerHeight);
             camera.updateProjectionMatrix();
         });
-    }
-    render() {
-        return (
-            <>
-                <canvas></canvas>
-            </>
-        );
-    }
+    }, []);
+    return (
+        <>
+            <canvas></canvas>
+        </>
+    );
 }
