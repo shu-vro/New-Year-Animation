@@ -149,7 +149,7 @@ export default class Animation extends Component {
                     bevelSegments: 8,
                 });
                 let geometry2 = new THREE.TextGeometry(
-                    "From Shuvro",
+                    "Made With <3 By Shuvro",
                     {
                         font: font,
                         size: 3,
