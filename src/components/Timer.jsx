@@ -60,4 +60,3 @@ export default function Timer({ setTransition }) {
         </div>
     );
 }
-// Dummy Code
